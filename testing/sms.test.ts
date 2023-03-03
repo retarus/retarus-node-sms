@@ -1,8 +1,7 @@
-import Configuration from "../../retarus-node-common/src/config";
-import { Region } from "../../retarus-node-common/src/region";
-import SmsClient from "../src/sms";
+import SmsClient from '../src/sms';
 import * as dotenv from 'dotenv'
-import { SmsJob } from "../src/model";
+import { Configuration, Region } from "@retarus/common";
+import { SmsJob } from '../src/model';
 
 
 

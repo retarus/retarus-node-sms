@@ -1,0 +1,38 @@
+name: release
+
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      
+      - run: mkdir -p  ~/download-art
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2.26.0
+        with:
+          github_token: ${{secrets.gh_token}}
+          workflow: ci.yaml
+          name: ${{ github.sha }}-ci_node_sms
+
+      - name: Upload to npmjs
+        run: |
+          npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm publish retarus-sms-*.tgz --access public
+      
+      - name: Create gh release
+        uses: softprops/action-gh-release@v1
+

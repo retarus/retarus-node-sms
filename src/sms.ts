@@ -1,6 +1,4 @@
-import { Region, RegionUri } from "../../retarus-node-common/src/region";
-import RetarusResponse from "@retarus/common/src/response";
-import Transporter from "../../retarus-node-common/src/transporter";
+import { Region, RegionUri, RetarusResponse, Transporter } from "@retarus/common";
 import { SmsJob } from "./model";
 
 
@@ -48,7 +46,7 @@ class SmsClient {
         return res;
     }
     async serverVersion() : Promise<RetarusResponse> {
-        let path = "/path"
+        let path = "/version"
         let res = await this.transporter.get(path, {})
         return res;
     }

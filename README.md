@@ -18,8 +18,7 @@ The Node SDK provides a client implementation to contact our fax services. To of
 ### Configuring the SDK
 First, you need to configure the SDK with your details.
 ```typescript
-import { Configuration } from '@retarus/common':
-import { Region } from '@retarus/common';
+import { Configuration, Region } from '@retarus/sms'
 
 Configuration.getInstance().setRegion(Region.Europe);
 Configuration.getInstance().setAuth(process.env["retarus_userid"]!, process.env["retarus_sms_password"]!)

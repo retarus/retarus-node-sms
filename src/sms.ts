@@ -16,12 +16,23 @@ class SmsClient {
         this.transporter = new Transporter(this.smsUris);
     }
 
+    /**
+     * Takes your earlier created SmsJob and sends it to the retarus server, to be processed and return a jobId for the according job.
+     * @param job 
+     * @returns RetarusResponse
+     */
     async sendSms(job: SmsJob) : Promise<RetarusResponse>{
         let path = "/jobs"
         let payload = JSON.parse(JSON.stringify(job));
         let res = await this.transporter.post(path, payload, {})
         return res
     }
+
+    /**
+     * Request the state using your jobId that was returned from the [sendSms] function
+     * @param jobId 
+     * @returns 
+     */
     async getSmsJob(jobId: string) : Promise<RetarusResponse> {
         let path = "/jobs/" + jobId
         let res = await this.transporter.get(path, {})

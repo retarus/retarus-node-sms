@@ -36,7 +36,6 @@ const smsClient = new SmsClient();
 To send a sms, first setup the SDK like described above. For your credentials, we recommend setting up an .env file. It should also contain the customer number. 
 > **Please note:** Using the API will only work with valid credentials.
 
-After that, you can execute the examples 'send_sms.ts' with Typescript. As a result, you should get a message that reports back the ID of the created job.
+After that, you can execute the examples '01.send_sms.ts' with Typescript. As a result, you should get a message that reports back the ID of the created job, it will also show how to request the according report for the job.
 
-In the sms examples folder, you will also find examples on how to retrieve the status of a sms job ID. The examples contain a little documentation on their own.
 

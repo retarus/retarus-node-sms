@@ -6,9 +6,9 @@ import { Configuration, Region, SmsClient, SmsJob } from '@retarus/sms/dist';
 
 // create smsClient
 const smsClient = new SmsClient();
-var jobId: any = ""
+let jobId: any = "";
 
-// Set the credentials for the sdk
+// Set the credentials for the SDK
 Configuration.getInstance().setRegion(Region.Europe);
 Configuration.getInstance().setAuth(process.env["retarus_userid"]!, process.env["retarus_sms_password"]!)
 
@@ -22,7 +22,7 @@ smsClient.sendSms(payload).then((response) => {
 
     // wait before requesting the sms report, so the server is able to process the job and create a report.
     setTimeout(() => {
-        // reuqest sms report from server
+        // request sms report from server
         smsClient.getSmsJob(jobId).then((response) => {
         console.log(response)
     })}, 8000)

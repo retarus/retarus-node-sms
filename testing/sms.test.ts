@@ -1,7 +1,7 @@
 import SmsClient from '../src/sms';
 import * as dotenv from 'dotenv'
 import { Configuration, Region } from "@retarus/common";
-import { SmsJob } from '../src/model';
+import { SmsJob } from '../src';
 
 
 
@@ -29,7 +29,7 @@ describe("Test the sms client including all the given functions to ensure the fu
         expect(res.error).toBe(false)
     })
 
-    // todo determine if this test and the including function should be implemented or removed from the sdk. Because of the slownes of the endpoint.
+    // todo determine if this test and the including function should be implemented or removed from the SDK. Because of the slownes of the endpoint.
     // test("filter sms reports", async () => {
     //     let res = await smsClient.filterSmsJobs({"jobIdsOnly": true, "limit": 1})
     //     console.log(res)

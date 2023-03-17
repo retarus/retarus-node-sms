@@ -47,7 +47,6 @@ export class SmsJob {
     static minimalJob(message: string, number: string) : SmsJob {
         let recipient = new Recipient(number);
         let messageCon = [new Message(message, [recipient])];
-        let x = new SmsJob(messageCon)
-        return x
+        return new SmsJob(messageCon)
     }
 }

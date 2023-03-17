@@ -1,5 +1,5 @@
 ## About the examples
-This folder contains a small set of applications which should visualize how the sdk can be used to dispatch messages and fulfill your business needs.
+This folder contains a small set of applications which should visualize how the SDK can be used to dispatch messages and fulfill your business needs.
 
 ### Credentials
 All the example applications still require credentials to authorize your request on the retarus server. So for that the examples uses environment variables. In this case you can simply export you credentials in your current terminal like this:

@@ -1,5 +1,5 @@
-import { Region, RegionUri, RetarusResponse, Transporter } from "@retarus/common";
-import { SmsJob } from "./model";
+import {Region, RegionUri, RetarusResponse, Transporter} from "@retarus/common";
+import {SmsJob} from "./model";
 
 
 class SmsClient {
@@ -24,8 +24,7 @@ class SmsClient {
     async sendSms(job: SmsJob) : Promise<RetarusResponse>{
         let path = "/jobs"
         let payload = JSON.parse(JSON.stringify(job));
-        let res = await this.transporter.post(path, payload, {})
-        return res
+        return await this.transporter.post(path, payload, {})
     }
 
     /**
@@ -35,8 +34,7 @@ class SmsClient {
      */
     async getSmsJob(jobId: string) : Promise<RetarusResponse> {
         let path = "/jobs/" + jobId
-        let res = await this.transporter.get(path, {})
-        return res
+        return await this.transporter.get(path, {})
     }
 
     /**Gets all sms reports that match the given criteria.
@@ -53,13 +51,11 @@ class SmsClient {
     async filterSmsJobs({...kwargs} = {}) : Promise<RetarusResponse> {
         let path = "/jobs";
         console.log(kwargs)
-        let res = await this.transporter.get(path, kwargs)
-        return res;
+        return await this.transporter.get(path, kwargs);
     }
     async serverVersion() : Promise<RetarusResponse> {
         let path = "/version"
-        let res = await this.transporter.get(path, {})
-        return res;
+        return await this.transporter.get(path, {});
     }
 }
 

@@ -2,7 +2,7 @@
  * Retarus GmbH 2023, send_sms.ts
  * 
  * */
-import { Configuration, Region, SmsClient, SmsJob } from '@retarus/sms/dist';
+import { Configuration, Region, SmsClient, SmsJob } from '@retarus/sms';
 
 // create smsClient
 const smsClient = new SmsClient();

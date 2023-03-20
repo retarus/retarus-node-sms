@@ -23,7 +23,7 @@ import { Configuration, Region } from '@retarus/sms'
 Configuration.getInstance().setRegion(Region.Europe);
 Configuration.getInstance().setAuth(process.env["retarus_userid"]!, process.env["retarus_sms_password"]!)
 ```
-Each service implemented a client which contains all the functions to contact and work with the messaging services. As you can see we globally set our region for the SDK, where your data should be processed and also your credentials are needed to authorize your requests.
+Each service implementes a client which contains all the functions to contact and work with the messaging services. As you can see we globally set our region for the SDK, where your data should be processed and also your credentials are needed to authorize your requests.
 
 
 ```typescript

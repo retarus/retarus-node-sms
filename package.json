@@ -1,8 +1,8 @@
 {
   "name": "@retarus/sms",
   "version": "1.0.0",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "Offical SMS SDK to contact the sms service offered by retarus GmbH.",
   "author": "Retarus GmbH <developers@retarus.com>",
   "bugs": "https://github.com/retarus/retarus-node-sms/issues/new",

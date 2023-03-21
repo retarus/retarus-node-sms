@@ -2,8 +2,7 @@
  * Retarus GmbH 2023, bulk_sender.ts
  * 
  * */
-import { RetarusResponse } from '@retarus/common';
-import { Configuration, Region, SmsClient, SmsJob } from '@retarus/sms';
+import { Configuration, Region, SmsClient, SmsJob, RetarusResponse } from '@retarus/sms';;
 import { parse } from 'csv-parse';
 import * as fs from "fs";
 import * as path from "path";
